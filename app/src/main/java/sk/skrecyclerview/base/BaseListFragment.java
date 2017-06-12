@@ -97,12 +97,19 @@ public abstract class BaseListFragment<T extends Entity, D extends ListResponse>
             @Override
             public void onLoadMore() {
 
+                if (isRequestInProcess) return;
+
                 if (mCurrentPage < totalPage) {
-                    // loading more
-                    //requestData();
+                    mCurrentPage++;
+                    isRequestInProcess = true;
+                    // loading more  因为数据和加载更多的数据是不一样的，
+                    // 所以建议把这个接口分成2个，一个用来请求首页复杂布局的数据，
+                    // 另一个请求单列表数据
+                    //loadMoreData();
                 } else {
                     mRecyclerView.setNoMore(true);
                 }
+
             }
         });
 

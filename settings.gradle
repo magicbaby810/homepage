@@ -1,1 +1,1 @@
-include ':app', ':srecyclerview_library'
+include ':app'
