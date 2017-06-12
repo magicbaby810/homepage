@@ -18,7 +18,7 @@ ArrayList<HomepageItemEntity> bList = new ArrayList<>();
             bList.add(bEntity);
         }
 
-//homepageEntity.B = bList; 仅注释此行数据即可，具体步骤是在你的接口中不给homepageEntity.B赋值。
+//homepageEntity.B = bList;//java 仅注释此行数据即可，具体步骤是在你的接口中不给homepageEntity.B赋值。
 //以下同理
 
 ![image](https://github.com/magicbaby810/homepage/blob/master/imgs/Screenshot_20170612-145723.png)
@@ -32,7 +32,7 @@ ArrayList<HomepageItemEntity> cList = new ArrayList<>();
             cEntity.img = "";
             cList.add(cEntity);
         }
-//homepageEntity.C = cList;
+//homepageEntity.C = cList;//java
 
 ![image](https://github.com/magicbaby810/homepage/blob/master/imgs/Screenshot_20170612-145747.png)
 
@@ -45,6 +45,6 @@ ArrayList<HomepageItemEntity> dList = new ArrayList<>();
             dEntity.img = "";
             dList.add(dEntity);
         }
-//homepageEntity.D = dList;
+//homepageEntity.D = dList; //java
 
 ![image](https://github.com/magicbaby810/homepage/blob/master/imgs/Screenshot_20170612-145816.png)
