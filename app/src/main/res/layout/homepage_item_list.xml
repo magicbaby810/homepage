@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/type2_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_10">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="@dimen/dp_72"
+                android:layout_height="@dimen/dp_72"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:id="@+id/item_img_type2" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:text=""
+                    android:ellipsize="end"
+                    android:textSize="@dimen/sp_16"
+                    android:textColor="@color/gray_text_89"
+                    android:id="@+id/title" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:text="¥ 0.00"
+                    android:textSize="@dimen/sp_18"
+                    android:textColor="@android:color/holo_red_light"
+                    android:id="@+id/price" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6">
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_alignParentLeft="true"
+                        android:text=""
+                        android:textSize="@dimen/sp_14"
+                        android:textColor="@color/text_gray_ab"
+                        android:id="@+id/left_message" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:text=""
+                        android:textSize="@dimen/sp_14"
+                        android:textColor="@color/text_gray_ab"
+                        android:id="@+id/right_message" />
+
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <View
+            style="@style/divider_horizontal_style" />
+    </LinearLayout>
+</android.support.v7.widget.CardView>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/dynamic_footer_view"
+            android:layout_centerInParent="true"
+            >
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/swipe_refresh_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <sk.srecyclerview_library.SRecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_gravity="center"/>
+
+            </android.support.v4.widget.SwipeRefreshLayout>
+            <include
+                android:id="@+id/empty_view"
+                layout="@layout/view_empty_layout"
+                android:visibility="gone"/>
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/top_btn"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:visibility="gone"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/dp_60"
+            android:layout_marginRight="16dp"
+            android:background="@mipmap/ic_to_top"
+            android:gravity="center"
+            />
+
+        <LinearLayout
+            android:id="@+id/dynamic_footer_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</LinearLayout>
