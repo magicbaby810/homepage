@@ -8,6 +8,24 @@
 
 ![image](https://github.com/magicbaby810/homepage/blob/master/imgs/Screenshot_20170612-145631.png)
 
+更新: 删除第一层布局
+```java
+//homepageEntity.A = aList; 仅注释此行数据即可，具体步骤是在你的接口中不给homepageEntity.A赋值。
+
+
+删除第二层布局
+```java
+ArrayList<HomepageItemEntity> bList = new ArrayList<>();
+        for (int i = 0; i < 4; i ++) {
+            HomepageItemEntity bEntity = new HomepageItemEntity();
+            bEntity.title = "sdad";
+            bEntity.url = "https://www.baidu.com/";
+            bEntity.img = "";
+            bList.add(bEntity);
+        }
+
+//homepageEntity.B = bList; 仅注释此行数据即可，具体步骤是在你的接口中不给homepageEntity.B赋值。
+
 删除第二层布局
 ```java
 ArrayList<HomepageItemEntity> bList = new ArrayList<>();
