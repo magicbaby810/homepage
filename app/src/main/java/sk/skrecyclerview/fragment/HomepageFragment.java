@@ -71,7 +71,7 @@ public class HomepageFragment extends BaseListFragment {
         shopAreaEntity.totalpage = 2;
         shopAreaEntity.page = 1;
         shopAreaEntity.list = new ArrayList<>();
-        for (int i = 0; i < 14; i ++) {
+        for (int i = 0; i < 140; i ++) {
             HomepageItemEntity eEntity = new HomepageItemEntity();
             eEntity.title = "爆眼鸭";
             eEntity.url = "https://www.baidu.com/";

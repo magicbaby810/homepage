@@ -237,14 +237,6 @@ public abstract class BaseListFragment<T extends Entity, D extends ListResponse>
     }
 
     /**
-     * 派客列表全部需要用户登录
-     * @return
-     */
-    protected boolean needUserInfo() {
-        return true;
-    }
-
-    /**
      * 没有数据时设置提示内容
      * @return
      */
