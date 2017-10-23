@@ -1,12 +1,9 @@
 package sk.skrecyclerview.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
-import android.support.design.widget.Snackbar;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
-import android.support.v4.view.accessibility.AccessibilityManagerCompat;
 import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -16,7 +13,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -28,14 +24,12 @@ import com.jude.rollviewpager.RollPagerView;
 import com.jude.rollviewpager.adapter.LoopPagerAdapter;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import sk.skrecyclerview.R;
 import sk.skrecyclerview.bean.HomepageEntity;
 import sk.skrecyclerview.bean.HomepageItemEntity;
-import sk.skrecyclerview.bean.ShopAreaEntity;
 
 
 /**
@@ -45,6 +39,7 @@ import sk.skrecyclerview.bean.ShopAreaEntity;
 public class HomepageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     //type
+    public static final int TYPE_REMOVE_SLIDER = 101;
     public static final int TYPE_SLIDER = 0;
     public static final int TYPE_TYPE_ACTIVITIES = 1;
     public static final int TYPE_TYPE_SHOPAREA = 2;
@@ -73,6 +68,8 @@ public class HomepageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         context = parent.getContext();
         switch (viewType) {
+            case TYPE_REMOVE_SLIDER:
+                return new HolderRemoveSlider(LayoutInflater.from(parent.getContext()).inflate(R.layout.homepage_item_remove_slider, parent, false));
             case TYPE_SLIDER:
                 return new HolderSlider(LayoutInflater.from(parent.getContext()).inflate(R.layout.homepage_item_banner, parent, false));
             case TYPE_TYPE_ACTIVITIES:
@@ -95,8 +92,9 @@ public class HomepageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        int i = 0;
-        if (holder instanceof HolderSlider) {
+        if (holder instanceof HolderRemoveSlider) {
+            // nothing to do
+        } else if (holder instanceof HolderSlider) {
             bindTypeSlider((HolderSlider) holder, position);
         } else if (holder instanceof HolderTypeActivities) {
             bindTypeActivities((HolderTypeActivities) holder, position - ASize);
@@ -114,7 +112,11 @@ public class HomepageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @Override
     public int getItemViewType(int position) {
         if (position == 0) {
-            return TYPE_SLIDER;
+            if (null != entity.A && entity.A.size() > 0) {
+                return TYPE_SLIDER;
+            } else {
+                return TYPE_REMOVE_SLIDER;
+            }
         } else if (0 < position && position < BSize) {
             return TYPE_TYPE_ACTIVITIES;
         } else if (BSize == position) {
@@ -152,9 +154,6 @@ public class HomepageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         notifyDataSetChanged();
     }
 
-
-    /////////////////////////////
-
     private void bindTypeSlider(final HolderSlider holder, final int position) {
         final ArrayList<HomepageItemEntity> bannerEntities = entity.A;
         if (bannerEntities != null && bannerEntities.size() > 0) {
@@ -169,6 +168,9 @@ public class HomepageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     Toast.makeText(holder.itemView.getContext(), "OK", Toast.LENGTH_SHORT).show();
                 }
             });
+        } else {
+            LinearLayout.LayoutParams ll = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0);
+            holder.bannerLayout.setLayoutParams(ll);
         }
     }
 
@@ -191,6 +193,9 @@ public class HomepageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     Toast.makeText(holder.itemView.getContext(), "OK", Toast.LENGTH_SHORT).show();
                 }
             });
+        } else {
+            LinearLayout.LayoutParams ll = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0);
+            holder.actLayout.setLayoutParams(ll);
         }
     }
 
@@ -299,6 +304,8 @@ public class HomepageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 public int getSpanSize(int position) {
                     int type = getItemViewType(position);
                     switch (type) {
+                        case TYPE_REMOVE_SLIDER:
+                            return ROWS;
                         case TYPE_SLIDER:
                             return ROWS;
                         case TYPE_TYPE_ACTIVITIES:
@@ -319,12 +326,20 @@ public class HomepageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
+    public class HolderRemoveSlider extends RecyclerView.ViewHolder {
+
+        public HolderRemoveSlider(View itemView) {
+            super(itemView);
+        }
+    }
     public class HolderSlider extends RecyclerView.ViewHolder {
         public RollPagerView banner;
+        public View bannerLayout;
 
         public HolderSlider(View itemView) {
             super(itemView);
             banner = (RollPagerView) itemView.findViewById(R.id.banner);
+            bannerLayout = itemView.findViewById(R.id.banner_layout);
         }
     }
     public class HolderTypeActivities extends RecyclerView.ViewHolder {

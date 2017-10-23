@@ -30,7 +30,7 @@ public class HomepageFragment extends BaseListFragment {
         ArrayList<HomepageItemEntity> aList = new ArrayList<>();
         for (int i = 0; i < 4; i ++) {
             HomepageItemEntity aEntity = new HomepageItemEntity();
-            aEntity.title = "sdad";
+            aEntity.title = "";
             aEntity.url = "https://www.baidu.com/";
             aEntity.img = "";
             aList.add(aEntity);
@@ -40,17 +40,17 @@ public class HomepageFragment extends BaseListFragment {
         ArrayList<HomepageItemEntity> bList = new ArrayList<>();
         for (int i = 0; i < 4; i ++) {
             HomepageItemEntity bEntity = new HomepageItemEntity();
-            bEntity.title = "sdad";
+            bEntity.title = "尼奥";
             bEntity.url = "https://www.baidu.com/";
             bEntity.img = "";
             bList.add(bEntity);
         }
-        //homepageEntity.B = bList;
+        homepageEntity.B = bList;
 
         ArrayList<HomepageItemEntity> cList = new ArrayList<>();
         for (int i = 0; i < 4; i ++) {
             HomepageItemEntity cEntity = new HomepageItemEntity();
-            cEntity.title = "sdad";
+            cEntity.title = "墨菲斯";
             cEntity.url = "https://www.baidu.com/";
             cEntity.img = "";
             cList.add(cEntity);
@@ -60,7 +60,7 @@ public class HomepageFragment extends BaseListFragment {
         ArrayList<HomepageItemEntity> dList = new ArrayList<>();
         for (int i = 0; i < 8; i ++) {
             HomepageItemEntity dEntity = new HomepageItemEntity();
-            dEntity.title = "sdad";
+            dEntity.title = "崔妮提";
             dEntity.url = "https://www.baidu.com/";
             dEntity.img = "";
             dList.add(dEntity);
@@ -73,11 +73,11 @@ public class HomepageFragment extends BaseListFragment {
         shopAreaEntity.list = new ArrayList<>();
         for (int i = 0; i < 14; i ++) {
             HomepageItemEntity eEntity = new HomepageItemEntity();
-            eEntity.title = "sdad";
+            eEntity.title = "爆眼鸭";
             eEntity.url = "https://www.baidu.com/";
             eEntity.img = "";
-            eEntity.rinfo = "asdwerw";
-            eEntity.linfo = "fsfsfs";
+            eEntity.rinfo = "30元/个";
+            eEntity.linfo = "黄色";
             shopAreaEntity.list.add(eEntity);
         }
         homepageEntity.E = shopAreaEntity;
