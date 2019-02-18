@@ -123,6 +123,8 @@ public abstract class BaseListFragment<T extends Entity, D extends ListResponse>
                     toTopBtn.setVisibility(View.GONE);
                     animate(toTopBtn, R.anim.floating_action_button_hide);
                 }
+
+                Log.e("executeOnLoadFinish", mRecyclerView.computeHorizontalScrollOffset() +" ");
             }
 
             @Override

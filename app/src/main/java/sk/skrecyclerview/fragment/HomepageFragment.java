@@ -35,7 +35,7 @@ public class HomepageFragment extends BaseListFragment {
             aEntity.img = "";
             aList.add(aEntity);
         }
-        homepageEntity.A = aList;
+        //homepageEntity.A = aList;
 
         ArrayList<HomepageItemEntity> bList = new ArrayList<>();
         for (int i = 0; i < 4; i ++) {
