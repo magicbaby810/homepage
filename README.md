@@ -9,6 +9,9 @@
 ![image](https://github.com/magicbaby810/homepage/blob/master/imgs/Screenshot_20170612-145631.png)
 
 更新:
+适配androidx，更新到gradle4.10.1
+
+
 ```java
 删除第一层布局
 //homepageEntity.A = aList; 仅注释此行数据即可，具体步骤是在你的接口中不给homepageEntity.A赋值。
