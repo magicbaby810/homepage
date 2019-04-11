@@ -1,8 +1,8 @@
 package sk.skrecyclerview.base;
 
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
@@ -23,9 +23,9 @@ import sk.srecyclerview_library.SRecyclerViewAdapter;
 import sk.srecyclerview_library.listener.OnLoadMoreListener;
 import sk.srecyclerview_library.utils.ProgressStyle;
 
-import static android.support.v4.view.ViewPager.SCROLL_STATE_DRAGGING;
-import static android.support.v4.view.ViewPager.SCROLL_STATE_IDLE;
-import static android.support.v4.view.ViewPager.SCROLL_STATE_SETTLING;
+import static androidx.viewpager.widget.ViewPager.SCROLL_STATE_DRAGGING;
+import static androidx.viewpager.widget.ViewPager.SCROLL_STATE_IDLE;
+import static androidx.viewpager.widget.ViewPager.SCROLL_STATE_SETTLING;
 
 
 public abstract class BaseListFragment<T extends Entity, D extends ListResponse> extends BaseFragment implements SwipeRefreshLayout.OnRefreshListener {

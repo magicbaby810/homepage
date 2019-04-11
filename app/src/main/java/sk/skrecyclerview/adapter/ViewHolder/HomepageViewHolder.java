@@ -1,6 +1,6 @@
 package sk.skrecyclerview.adapter.ViewHolder;
 
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 
 /**

@@ -8,13 +8,13 @@
     android:padding="@dimen/dp_4"
     android:orientation="vertical">
 
-    <android.support.v7.widget.AppCompatImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/act_img"
         android:layout_width="@dimen/dp_36"
         android:layout_height="@dimen/dp_36"
         android:text="" />
 
-    <android.support.v7.widget.AppCompatTextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/act_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

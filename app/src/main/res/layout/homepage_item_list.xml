@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/dp_10">
 
-            <android.support.v7.widget.AppCompatImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="@dimen/dp_72"
                 android:layout_height="@dimen/dp_72"
                 android:layout_gravity="center"
@@ -29,7 +29,7 @@
                 android:layout_marginLeft="@dimen/dp_10"
                 android:orientation="vertical">
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:maxLines="2"
@@ -39,7 +39,7 @@
                     android:textColor="@color/gray_text_89"
                     android:id="@+id/title" />
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp_6"
@@ -52,7 +52,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp_6">
-                    <android.support.v7.widget.AppCompatTextView
+                    <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
@@ -62,7 +62,7 @@
                         android:textColor="@color/text_gray_ab"
                         android:id="@+id/left_message" />
 
-                    <android.support.v7.widget.AppCompatTextView
+                    <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -78,4 +78,4 @@
         <View
             style="@style/divider_horizontal_style" />
     </LinearLayout>
-</android.support.v7.widget.CardView>
+</androidx.cardview.widget.CardView>
