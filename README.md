@@ -1,4 +1,4 @@
-# homepage
+# homepage  （仅供参考）
 只用recyclerview实现复杂首页布局，布局随增减数据动态显示
  下拉刷新上拉加载更多
 
